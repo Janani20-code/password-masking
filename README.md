@@ -22,7 +22,8 @@ This prevents exposing credentials directly in your code and promotes safe devel
 ### Install Required Packages
 
 ```bash
-pip install cryptography mysql-connector-python
+pip install cryptography
+mysql-connector-python
 ```
 
 ## 🙌 Credits
