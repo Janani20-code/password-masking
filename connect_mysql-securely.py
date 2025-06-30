@@ -1,7 +1,8 @@
-# mysql_connect_safe.py
+# connect_mysql-securely.py
 import mysql.connector
-from password_utils import get_decrypted_password
-def connect_to_mysql() -> None:
+from password_security import get_decrypted_password
+def connect_to_mysql():
+    db = None
     try:
         db = mysql.connector.connect(
             host="localhost",
@@ -18,7 +19,7 @@ def connect_to_mysql() -> None:
     except mysql.connector.Error as err:
         print("mysql error:",err)
     finally:
-        if db.is_connected():
+        if db and db.is_connected():
             db.close()
             print("connection closed")
 

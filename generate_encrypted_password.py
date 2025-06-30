@@ -1,5 +1,5 @@
-# encrypt_once.py
-from  password_utils import encrypt_password
+# generate_encrypted_password.py
+from  password_security import encrypt_password
 from cryptography.fernet import Fernet
 import getpass
 
@@ -17,5 +17,5 @@ if __name__ == "__main__":
 
     # 🔐 Replace with your real MySQL password
     encrypted = encrypt_password(password)
-    print("Encrypted password (copy this to password_utils.py):")
+    print("Encrypted password (copy this to password.enc):")
     print(encrypted)

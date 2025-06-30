@@ -1,4 +1,4 @@
-# password_utils.py
+# password_security.py
 from cryptography.fernet import Fernet
 
 class FakeStr(str):
@@ -9,7 +9,6 @@ class FakeStr(str):
 #load the secret key
 def load_key():
     return open("secret.key", "rb").read()
-#encrypt the plain password
 
 def encrypt_password(password):
     key = load_key()
