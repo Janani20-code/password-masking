@@ -1,6 +1,8 @@
-# connect_mysql-securely.py
+# connect_mysql_securely.py
 import mysql.connector
 from password_security import get_decrypted_password
+
+#connect to MYSQL using the decrypted (but masked) password
 def connect_to_mysql():
     db = None
     try:
@@ -10,8 +12,8 @@ def connect_to_mysql():
             password=get_decrypted_password(),
             database="tea_business"
 )
-
         print("Connected to MySQL database!")
+#prints masked ******
         print(get_decrypted_password())
         cursor = db.cursor()
         cursor.execute("select database();")
@@ -20,6 +22,7 @@ def connect_to_mysql():
         print("mysql error:",err)
     finally:
         if db and db.is_connected():
+#closes only if opened
             db.close()
             print("connection closed")
 
